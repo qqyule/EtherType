@@ -156,7 +156,14 @@ final class AppState {
         if !transcription.isEmpty {
             lastTranscription = transcription
             print("[AppState] ✅ 转录结果: \(transcription)")
-            // TODO: 未来在这里执行文字注入
+            
+            // 执行文字注入
+            let injected = await TextInjector.inject(text: transcription)
+            if injected {
+                print("[AppState] ✅ 文字注入成功")
+            } else {
+                print("[AppState] ⚠️ 文字注入失败")
+            }
         }
         
         // 延迟隐藏 HUD
