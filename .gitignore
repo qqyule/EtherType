@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Swift Package Manager
+.build/
+build/
+.swiftpm/
+# 如果不希望提交 package 依赖锁定文件，可以取消注释
+# Package.resolved
+
+# Xcode
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+DerivedData/
+
+# Project Specific
+*.swp
+*.log

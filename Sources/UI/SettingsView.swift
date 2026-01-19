@@ -25,6 +25,10 @@ struct SettingsView: View {
                 }
         }
         .frame(width: 450, height: 250)
+        .onAppear {
+            // 激活应用程序，确保设置窗口置顶
+            NSApp.activate(ignoringOtherApps: true)
+        }
     }
 }
 
@@ -96,6 +100,10 @@ struct AboutSettingsTab: View {
     }
 }
 
-#Preview {
-    SettingsView()
+// MARK: - Preview
+
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsView()
+    }
 }

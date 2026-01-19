@@ -1,4 +1,4 @@
-import KeyboardShortcuts
+@preconcurrency import KeyboardShortcuts
 
 /// 定义全局快捷键名称
 /// 使用 KeyboardShortcuts 库管理用户可自定义的全局快捷键

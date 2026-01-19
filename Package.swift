@@ -17,8 +17,8 @@ let package = Package(
     dependencies: [
         // 本地语音识别引擎
         .package(url: "https://github.com/argmaxinc/WhisperKit.git", from: "0.9.0"),
-        // 全局快捷键支持
-        .package(url: "https://github.com/sindresorhus/KeyboardShortcuts.git", from: "2.0.0"),
+        // 全局快捷键支持 (锁定 v1.10.0 避免 #Preview 宏兼容问题)
+        .package(url: "https://github.com/sindresorhus/KeyboardShortcuts.git", exact: "1.10.0"),
         // 开机自启管理
         .package(url: "https://github.com/sindresorhus/LaunchAtLogin.git", from: "5.0.0"),
         // UserDefaults 封装
@@ -33,7 +33,10 @@ let package = Package(
                 "LaunchAtLogin",
                 "Defaults"
             ],
-            path: "Sources"
+            path: "Sources",
+            linkerSettings: [
+                .unsafeFlags(["-Xlinker", "-sectcreate", "-Xlinker", "__TEXT", "-Xlinker", "__info_plist", "-Xlinker", "Sources/App/Info.plist"])
+            ]
         ),
         .testTarget(
             name: "EtherTypeTests",

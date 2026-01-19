@@ -133,20 +133,6 @@
         }
       ]
     },
-    "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/KeyboardShortcuts_KeyboardShortcuts.bundle/it.lproj/Localizable.strings" : {
-      "inputs" : [
-        {
-          "kind" : "file",
-          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/KeyboardShortcuts/Sources/KeyboardShortcuts/Localization/it.lproj/Localizable.strings"
-        }
-      ],
-      "outputs" : [
-        {
-          "kind" : "file",
-          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/KeyboardShortcuts_KeyboardShortcuts.bundle/it.lproj/Localizable.strings"
-        }
-      ]
-    },
     "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/KeyboardShortcuts_KeyboardShortcuts.bundle/ja.lproj/Localizable.strings" : {
       "inputs" : [
         {
@@ -189,20 +175,6 @@
         }
       ]
     },
-    "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/KeyboardShortcuts_KeyboardShortcuts.bundle/pt-br.lproj/Localizable.strings" : {
-      "inputs" : [
-        {
-          "kind" : "file",
-          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/KeyboardShortcuts/Sources/KeyboardShortcuts/Localization/pt-BR.lproj/Localizable.strings"
-        }
-      ],
-      "outputs" : [
-        {
-          "kind" : "file",
-          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/KeyboardShortcuts_KeyboardShortcuts.bundle/pt-br.lproj/Localizable.strings"
-        }
-      ]
-    },
     "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/KeyboardShortcuts_KeyboardShortcuts.bundle/ru.lproj/Localizable.strings" : {
       "inputs" : [
         {
@@ -214,20 +186,6 @@
         {
           "kind" : "file",
           "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/KeyboardShortcuts_KeyboardShortcuts.bundle/ru.lproj/Localizable.strings"
-        }
-      ]
-    },
-    "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/KeyboardShortcuts_KeyboardShortcuts.bundle/sk.lproj/Localizable.strings" : {
-      "inputs" : [
-        {
-          "kind" : "file",
-          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/KeyboardShortcuts/Sources/KeyboardShortcuts/Localization/sk.lproj/Localizable.strings"
-        }
-      ],
-      "outputs" : [
-        {
-          "kind" : "file",
-          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/KeyboardShortcuts_KeyboardShortcuts.bundle/sk.lproj/Localizable.strings"
         }
       ]
     },
@@ -350,8 +308,8 @@
     }
   },
   "generatedSourceTargetSet" : [
-    "GenerateManual",
-    "GenerateDoccReference"
+    "GenerateDoccReference",
+    "GenerateManual"
   ],
   "pluginDescriptions" : [
     {
@@ -693,6 +651,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ArgumentParser-tool.build/include/ArgumentParser-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-enable-experimental-feature",
@@ -1286,6 +1245,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ArgumentParser.build/include/ArgumentParser-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-enable-experimental-feature",
@@ -1625,6 +1585,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ArgumentParserToolInfo-tool.build/include/ArgumentParserToolInfo-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-enable-upcoming-feature",
@@ -1712,6 +1673,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ArgumentParserToolInfo.build/include/ArgumentParserToolInfo-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-enable-upcoming-feature",
@@ -1872,6 +1834,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/BasicContainers.build/include/BasicContainers-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "6",
         "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -2349,6 +2312,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/BitCollections.build/include/BitCollections-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "6",
         "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -2781,6 +2745,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Collections.build/include/Collections-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "6",
         "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -2938,6 +2903,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ContainersPreview.build/include/ContainersPreview-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "6",
         "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -3150,6 +3116,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/include/Defaults-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-I",
@@ -3371,6 +3338,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/DequeModule.build/include/DequeModule-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "6",
         "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -3538,7 +3506,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/Sources/Core/AudioRecorder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/Sources/Core/WhisperManager.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/leo/Web/project/mac-app/EtherType/Sources/UI/MenuBarView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/Sources/UI/OnboardingView.swift"
         },
         {
           "kind" : "file",
@@ -3576,7 +3556,10 @@
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/AppState.swift.o",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/EtherTypeApp.swift.o",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/KeyboardShortcutNames.swift.o",
+        "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/AudioRecorder.swift.o",
+        "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/WhisperManager.swift.o",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/MenuBarView.swift.o",
+        "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/OnboardingView.swift.o",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/SettingsView.swift.o"
       ],
       "otherArguments" : [
@@ -3600,6 +3583,7 @@
         "-entry-point-function-name",
         "-Xfrontend",
         "EtherType_main",
+        "-color-diagnostics",
         "-swift-version",
         "6",
         "-I",
@@ -3639,7 +3623,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/AudioRecorder.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/WhisperManager.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/MenuBarView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/OnboardingView.swift.o"
         },
         {
           "kind" : "file",
@@ -3655,7 +3651,10 @@
         "/Users/leo/Web/project/mac-app/EtherType/Sources/App/AppState.swift",
         "/Users/leo/Web/project/mac-app/EtherType/Sources/App/EtherTypeApp.swift",
         "/Users/leo/Web/project/mac-app/EtherType/Sources/App/KeyboardShortcutNames.swift",
+        "/Users/leo/Web/project/mac-app/EtherType/Sources/Core/AudioRecorder.swift",
+        "/Users/leo/Web/project/mac-app/EtherType/Sources/Core/WhisperManager.swift",
         "/Users/leo/Web/project/mac-app/EtherType/Sources/UI/MenuBarView.swift",
+        "/Users/leo/Web/project/mac-app/EtherType/Sources/UI/OnboardingView.swift",
         "/Users/leo/Web/project/mac-app/EtherType/Sources/UI/SettingsView.swift"
       ],
       "tempsPath" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build",
@@ -3712,6 +3711,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypePackageTests.build/include/EtherTypePackageTests-Swift.h",
+        "-color-diagnostics",
         "-I",
         "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
         "-L",
@@ -3799,6 +3799,7 @@
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ModuleCache",
         "-parseable-output",
         "-parse-as-library",
+        "-color-diagnostics",
         "-swift-version",
         "6",
         "-I",
@@ -3929,6 +3930,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Generation.build/include/Generation-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-I",
@@ -4480,6 +4482,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/HashTreeCollections.build/include/HashTreeCollections-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "6",
         "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -5047,6 +5050,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/HeapModule.build/include/HeapModule-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "6",
         "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -5232,6 +5236,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Hub.build/include/Hub-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-enable-experimental-feature",
@@ -5431,6 +5436,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/InternalCollectionsUtilities.build/include/InternalCollectionsUtilities-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "6",
         "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -5698,6 +5704,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Jinja.build/include/Jinja-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "6",
         "-I",
@@ -5887,7 +5894,7 @@
       ],
       "otherArguments" : [
         "-target",
-        "arm64-apple-macosx10.15",
+        "arm64-apple-macosx10.13",
         "-incremental",
         "-enable-batch-mode",
         "-serialize-diagnostics",
@@ -5906,6 +5913,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/KeyboardShortcuts.build/include/KeyboardShortcuts-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-I",
@@ -5926,10 +5934,6 @@
         "-Xcc",
         "-g",
         "-suppress-warnings",
-        "-user-module-version",
-        "2.4.0",
-        "-package-name",
-        "keyboardshortcuts",
         "-disable-sandbox"
       ],
       "outputFileMapPath" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/KeyboardShortcuts.build/output-file-map.json",
@@ -6059,6 +6063,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/LaunchAtLogin.build/include/LaunchAtLogin-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-I",
@@ -6174,6 +6179,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Models.build/include/Models-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-I",
@@ -6575,6 +6581,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/OrderedCollections.build/include/OrderedCollections-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "6",
         "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -7061,6 +7068,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Tokenizers.build/include/Tokenizers-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-I",
@@ -7218,6 +7226,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/TrailingElementsModule.build/include/TrailingElementsModule-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "6",
         "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -7469,6 +7478,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/WhisperKit.build/include/WhisperKit-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-I",
@@ -7699,6 +7709,7 @@
         "-entry-point-function-name",
         "-Xfrontend",
         "WhisperKitCLI_main",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-I",
@@ -8185,6 +8196,7 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/_RopeModule.build/include/_RopeModule-Swift.h",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -8696,6 +8708,7 @@
         "-entry-point-function-name",
         "-Xfrontend",
         "generate_docc_reference_main",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-enable-upcoming-feature",
@@ -8811,6 +8824,7 @@
         "-entry-point-function-name",
         "-Xfrontend",
         "generate_docc_reference_main",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-enable-upcoming-feature",
@@ -9061,6 +9075,7 @@
         "-entry-point-function-name",
         "-Xfrontend",
         "generate_manual_main",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-enable-upcoming-feature",
@@ -9446,6 +9461,7 @@
         "-entry-point-function-name",
         "-Xfrontend",
         "generate_manual_main",
+        "-color-diagnostics",
         "-swift-version",
         "5",
         "-enable-upcoming-feature",
@@ -9716,6 +9732,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ArgumentParser.build/include/ArgumentParser-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "5",
       "-enable-experimental-feature",
@@ -9772,6 +9789,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ArgumentParserToolInfo-tool.build/include/ArgumentParserToolInfo-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "5",
       "-enable-upcoming-feature",
@@ -9841,6 +9859,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/BasicContainers.build/include/BasicContainers-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "6",
       "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -9986,6 +10005,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/BitCollections.build/include/BitCollections-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "6",
       "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -10073,6 +10093,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Collections.build/include/Collections-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "6",
       "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -10167,6 +10188,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ContainersPreview.build/include/ContainersPreview-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "6",
       "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -10265,6 +10287,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/include/Defaults-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "5",
       "-I",
@@ -10336,6 +10359,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/DequeModule.build/include/DequeModule-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "6",
       "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -10403,7 +10427,10 @@
       "/Users/leo/Web/project/mac-app/EtherType/Sources/App/AppState.swift",
       "/Users/leo/Web/project/mac-app/EtherType/Sources/App/EtherTypeApp.swift",
       "/Users/leo/Web/project/mac-app/EtherType/Sources/App/KeyboardShortcutNames.swift",
+      "/Users/leo/Web/project/mac-app/EtherType/Sources/Core/AudioRecorder.swift",
+      "/Users/leo/Web/project/mac-app/EtherType/Sources/Core/WhisperManager.swift",
       "/Users/leo/Web/project/mac-app/EtherType/Sources/UI/MenuBarView.swift",
+      "/Users/leo/Web/project/mac-app/EtherType/Sources/UI/OnboardingView.swift",
       "/Users/leo/Web/project/mac-app/EtherType/Sources/UI/SettingsView.swift",
       "-I",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Modules",
@@ -10427,6 +10454,7 @@
       "-entry-point-function-name",
       "-Xfrontend",
       "EtherType_main",
+      "-color-diagnostics",
       "-swift-version",
       "6",
       "-I",
@@ -10484,6 +10512,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypePackageTests.build/include/EtherTypePackageTests-Swift.h",
+      "-color-diagnostics",
       "-I",
       "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
       "-L",
@@ -10536,6 +10565,7 @@
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ModuleCache",
       "-parseable-output",
       "-parse-as-library",
+      "-color-diagnostics",
       "-swift-version",
       "6",
       "-I",
@@ -10599,6 +10629,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Generation.build/include/Generation-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "5",
       "-I",
@@ -10739,6 +10770,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/HashTreeCollections.build/include/HashTreeCollections-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "6",
       "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -10831,6 +10863,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/HeapModule.build/include/HeapModule-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "6",
       "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -10924,6 +10957,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Hub.build/include/Hub-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "5",
       "-enable-experimental-feature",
@@ -10998,6 +11032,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/InternalCollectionsUtilities.build/include/InternalCollectionsUtilities-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "6",
       "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -11098,6 +11133,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Jinja.build/include/Jinja-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "6",
       "-I",
@@ -11130,8 +11166,6 @@
       "/Library/Developer/CommandLineTools/usr/bin/swiftc",
       "-module-name",
       "KeyboardShortcuts",
-      "-package-name",
-      "keyboardshortcuts",
       "-c",
       "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/KeyboardShortcuts/Sources/KeyboardShortcuts/CarbonKeyboardShortcuts.swift",
       "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/KeyboardShortcuts/Sources/KeyboardShortcuts/Key.swift",
@@ -11147,7 +11181,7 @@
       "-I",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Modules",
       "-target",
-      "arm64-apple-macosx10.15",
+      "arm64-apple-macosx10.13",
       "-incremental",
       "-enable-batch-mode",
       "-serialize-diagnostics",
@@ -11166,6 +11200,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/KeyboardShortcuts.build/include/KeyboardShortcuts-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "5",
       "-I",
@@ -11186,10 +11221,6 @@
       "-Xcc",
       "-g",
       "-suppress-warnings",
-      "-user-module-version",
-      "2.4.0",
-      "-package-name",
-      "keyboardshortcuts",
       "-disable-sandbox",
       "-driver-use-frontend-path",
       "/Library/Developer/CommandLineTools/usr/bin/swiftc"
@@ -11226,6 +11257,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/LaunchAtLogin.build/include/LaunchAtLogin-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "5",
       "-I",
@@ -11284,6 +11316,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Models.build/include/Models-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "5",
       "-I",
@@ -11400,6 +11433,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/OrderedCollections.build/include/OrderedCollections-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "6",
       "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -11499,6 +11533,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Tokenizers.build/include/Tokenizers-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "5",
       "-I",
@@ -11557,6 +11592,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/TrailingElementsModule.build/include/TrailingElementsModule-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "6",
       "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -11667,6 +11703,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/WhisperKit.build/include/WhisperKit-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "5",
       "-I",
@@ -11727,6 +11764,7 @@
       "-entry-point-function-name",
       "-Xfrontend",
       "WhisperKitCLI_main",
+      "-color-diagnostics",
       "-swift-version",
       "5",
       "-I",
@@ -11858,6 +11896,7 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/_RopeModule.build/include/_RopeModule-Swift.h",
+      "-color-diagnostics",
       "-swift-version",
       "5",
       "-DCOLLECTIONS_RANDOMIZED_TESTING",
@@ -11945,6 +11984,7 @@
       "-entry-point-function-name",
       "-Xfrontend",
       "generate_docc_reference_main",
+      "-color-diagnostics",
       "-swift-version",
       "5",
       "-enable-upcoming-feature",
@@ -12028,6 +12068,7 @@
       "-entry-point-function-name",
       "-Xfrontend",
       "generate_manual_main",
+      "-color-diagnostics",
       "-swift-version",
       "5",
       "-enable-upcoming-feature",
@@ -13216,7 +13257,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/Sources/Core/AudioRecorder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/Sources/Core/WhisperManager.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/leo/Web/project/mac-app/EtherType/Sources/UI/MenuBarView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/Sources/UI/OnboardingView.swift"
         },
         {
           "kind" : "file",
@@ -13286,6 +13339,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/AudioRecorder.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/EtherTypeApp.swift.o"
         },
         {
@@ -13298,7 +13355,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/OnboardingView.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/SettingsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/WhisperManager.swift.o"
         },
         {
           "kind" : "file",
@@ -13978,6 +14043,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/AudioRecorder.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/EtherTypeApp.swift.o"
         },
         {
@@ -13990,7 +14059,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/OnboardingView.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/SettingsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/WhisperManager.swift.o"
         },
         {
           "kind" : "file",
