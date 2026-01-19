@@ -46,6 +46,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     /// 引导窗口 (保持强引用)
     private var onboardingWindow: NSWindow?
     
+    /// HUD 悬浮窗口
+    private var hudWindow: NSWindow?
+    
+    /// HUD 显示状态跟踪
+    private var lastHUDState: Bool = false
+    
     func applicationDidFinishLaunching(_ notification: Notification) {
         print("[EtherType] 🚀 应用启动")
         
@@ -83,6 +89,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
             print("[EtherType] ✅ 引导已完成，跳过")
         }
+        
+        // 设置 HUD 窗口
+        setupHUDWindow()
+        
+        // 监听 showHUD 状态变化
+        observeHUDState()
     }
     
     /// 显示引导窗口
@@ -123,5 +135,103 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         window.orderFrontRegardless()
         
         print("[EtherType] ✅ 引导窗口已显示")
+    }
+    
+    // MARK: - HUD 窗口管理
+    
+    /// 初始化 HUD 窗口
+    private func setupHUDWindow() {
+        let hudView = HUDView(appState: appState)
+        let hostingController = NSHostingController(rootView: hudView)
+        
+        let window = NSWindow(contentViewController: hostingController)
+        window.identifier = NSUserInterfaceItemIdentifier("hud")
+        
+        // 无标题栏、透明、不可调整大小
+        window.styleMask = [.borderless]
+        window.isOpaque = false
+        window.backgroundColor = .clear
+        window.hasShadow = false
+        window.level = .floating
+        window.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
+        window.isReleasedWhenClosed = false
+        window.ignoresMouseEvents = true  // 不阻挡鼠标事件
+        
+        // 设置窗口大小和位置
+        let hudWidth: CGFloat = 160
+        let hudHeight: CGFloat = 44
+        window.setContentSize(NSSize(width: hudWidth, height: hudHeight))
+        
+        // 居中放置在屏幕底部 Dock 上方
+        if let screen = NSScreen.main {
+            let screenFrame = screen.visibleFrame
+            let x = screenFrame.midX - hudWidth / 2
+            let y = screenFrame.minY + 80  // Dock 上方 80px
+            window.setFrameOrigin(NSPoint(x: x, y: y))
+        }
+        
+        self.hudWindow = window
+        print("[EtherType] 🟢 HUD 窗口已初始化")
+    }
+    
+    /// 监听 HUD 状态变化
+    private func observeHUDState() {
+        // 使用 Timer 轮询状态，在 MainActor 上执行
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
+            Task { @MainActor in
+                guard let self = self else { return }
+                
+                // 仅在状态变化时执行显隐操作
+                let currentState = self.appState.showHUD
+                if currentState != self.lastHUDState {
+                    self.lastHUDState = currentState
+                    if currentState {
+                        self.showHUD()
+                    } else {
+                        self.hideHUD()
+                    }
+                }
+            }
+        }
+    }
+    
+    /// 显示 HUD
+    private func showHUD() {
+        guard let window = hudWindow, !window.isVisible else { return }
+        
+        // 重新计算位置（屏幕可能切换）
+        if let screen = NSScreen.main {
+            let screenFrame = screen.visibleFrame
+            let x = screenFrame.midX - window.frame.width / 2
+            let y = screenFrame.minY + 80
+            window.setFrameOrigin(NSPoint(x: x, y: y))
+        }
+        
+        // 淡入动画
+        window.alphaValue = 0
+        window.orderFront(nil)
+        NSAnimationContext.runAnimationGroup { context in
+            context.duration = 0.2
+            window.animator().alphaValue = 1
+        }
+        
+        print("[EtherType] 🟢 HUD 显示")
+    }
+    
+    /// 隐藏 HUD
+    private func hideHUD() {
+        guard let window = hudWindow, window.isVisible else { return }
+        
+        // 淡出动画
+        NSAnimationContext.runAnimationGroup({ context in
+            context.duration = 0.2
+            window.animator().alphaValue = 0
+        }, completionHandler: {
+            Task { @MainActor in
+                window.orderOut(nil)
+            }
+        })
+        
+        print("[EtherType] 🟡 HUD 隐藏")
     }
 }

@@ -24,6 +24,9 @@ final class AppState {
     /// 是否正在处理（转录中）
     var isProcessing: Bool = false
     
+    /// 是否显示 HUD
+    var showHUD: Bool = false
+    
     /// 模型加载进度 (0.0 - 1.0)
     var modelLoadProgress: Double = 0.0
     
@@ -122,6 +125,7 @@ final class AppState {
         do {
             try await audioRecorder.startRecording()
             isRecording = true
+            showHUD = true
             print("[AppState] 🎤 录音开始")
         } catch {
             print("[AppState] ❌ 录音开始失败: \(error)")
@@ -154,5 +158,9 @@ final class AppState {
             print("[AppState] ✅ 转录结果: \(transcription)")
             // TODO: 未来在这里执行文字注入
         }
+        
+        // 延迟隐藏 HUD
+        try? await Task.sleep(for: .milliseconds(300))
+        showHUD = false
     }
 }
