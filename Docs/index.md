@@ -14,7 +14,7 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: 下载
-      link: https://github.com/yourusername/EtherType/releases
+      link: https://github.com/qqyule/EtherType/releases
 
 features:
   - icon: 🔒

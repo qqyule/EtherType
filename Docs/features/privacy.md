@@ -52,7 +52,7 @@ EtherType 仅在本地存储：
 
 EtherType 是完全开源的项目：
 
-- 📦 源代码：[GitHub](https://github.com/yourusername/EtherType)
+- 📦 源代码：[GitHub](https://github.com/qqyule/EtherType)
 - 📜 许可证：MIT License
 
 欢迎审查代码，提出问题或建议。

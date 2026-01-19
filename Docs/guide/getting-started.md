@@ -4,7 +4,7 @@
 
 ## 下载安装
 
-1. 前往 [Releases 页面](https://github.com/yourusername/EtherType/releases)
+1. 前往 [Releases 页面](https://github.com/qqyule/EtherType/releases)
 2. 下载最新版本的 `.dmg` 文件
 3. 打开 `.dmg`，将 EtherType 拖入 `Applications` 文件夹
 

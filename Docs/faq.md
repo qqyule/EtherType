@@ -69,7 +69,7 @@ EtherType 需要录制你的声音才能进行语音识别。没有麦克风权�
 
 ### 如何反馈问题？
 
-请在 [GitHub Issues](https://github.com/yourusername/EtherType/issues) 提交问题。
+请在 [GitHub Issues](https://github.com/qqyule/EtherType/issues) 提交问题。
 
 提交 Issue 时，请尽量包含：
 - macOS 版本

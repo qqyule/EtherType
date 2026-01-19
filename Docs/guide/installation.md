@@ -16,7 +16,7 @@
 
 最简单的方式是直接下载预编译版本：
 
-1. 访问 [Releases 页面](https://github.com/yourusername/EtherType/releases)
+1. 访问 [Releases 页面](https://github.com/qqyule/EtherType/releases)
 2. 下载对应架构的 `.dmg` 文件
 3. 双击打开，拖拽到 `Applications`
 4. 首次打开时，右键选择「打开」以跳过 Gatekeeper
@@ -27,7 +27,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yourusername/EtherType.git
+git clone https://github.com/qqyule/EtherType.git
 cd EtherType
 
 # 构建

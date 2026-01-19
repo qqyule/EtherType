@@ -23,12 +23,12 @@
 
 ### 下载
 
-从 [Releases](https://github.com/yourusername/EtherType/releases) 页面下载最新版本。
+从 [Releases](https://github.com/qqyule/EtherType/releases) 页面下载最新版本。
 
 ### 从源码构建
 
 ```bash
-git clone https://github.com/yourusername/EtherType.git
+git clone https://github.com/qqyule/EtherType.git
 cd EtherType
 swift build -c release
 ```
