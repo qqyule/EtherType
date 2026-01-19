@@ -1,3 +1,0 @@
-module LaunchAtLogin {
-    header "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/LaunchAtLogin.build/include/LaunchAtLogin-Swift.h"
-}

@@ -3,17 +3,30 @@
 
 # Swift Package Manager
 .build/
-build/
 .swiftpm/
-# 如果不希望提交 package 依赖锁定文件，可以取消注释
-# Package.resolved
+DerivedData/
+Package.resolved
 
 # Xcode
 *.xcodeproj
 *.xcworkspace
 xcuserdata/
-DerivedData/
+*.xccheckout
+*.xcscmblueprint
+*.xcuserstate
+
+# Build Artifacts
+build/
+*.app
+*.dmg
+*.ipa
+*.pkg
 
 # Project Specific
 *.swp
 *.log
+.DS_Store
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
