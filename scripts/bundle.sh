@@ -71,4 +71,27 @@ fi
 echo "📝 应用 Ad-hoc 签名..."
 codesign --force --deep --sign - "$APP_BUNDLE"
 
-echo "✅ 打包完成: $APP_BUNDLE"
+echo "✅ 应用签名完成"
+
+# 8. 打包 DMG
+echo "💿 创建 DMG..."
+DMG_NAME="$APP_NAME-$VERSION-$ARCH.dmg"
+DMG_STAGING="dmg_staging"
+
+# 清理旧文件
+rm -rf "$DMG_NAME" "$DMG_STAGING"
+mkdir -p "$DMG_STAGING"
+
+# 复制 App 和创建 Applications 软链接
+cp -r "$APP_BUNDLE" "$DMG_STAGING/"
+ln -s /Applications "$DMG_STAGING/Applications"
+
+# 生成 DMG
+hdiutil create -volname "$APP_NAME" -srcfolder "$DMG_STAGING" -ov -format UDZO "$DMG_NAME"
+
+# 清理临时文件
+rm -rf "$DMG_STAGING"
+
+echo "🎉 全部完成!"
+echo "   📱 App: $APP_BUNDLE"
+echo "   💿 DMG: $DMG_NAME"

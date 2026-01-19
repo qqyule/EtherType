@@ -137,14 +137,13 @@ final class AppState {
     
     private func startRecording() async {
         print("[AppState] 尝试开始录音...")
-        print("[AppState] 状态: isProcessing=\(isProcessing), isModelLoaded=\(isModelLoaded)")
         
-        let alreadyRecording = await audioRecorder.isRecording
-        
-        if alreadyRecording {
-            print("[AppState] ⚠️ 已在录音中")
+        // 1. 优先检查本地状态 (MainActor 串行保护)
+        if isRecording {
+            print("[AppState] ⚠️ 已在录音中 (Local)，跳过")
             return
         }
+        
         if isProcessing {
             print("[AppState] ⚠️ 正在处理中")
             return
@@ -154,29 +153,41 @@ final class AppState {
             return
         }
         
+        // 2. 立即设置状态以阻止后续调用
+        isRecording = true
+        showHUD = true
+        
         do {
+            // 3. 异步启动
             try await audioRecorder.startRecording()
-            isRecording = true
-            showHUD = true
             print("[AppState] 🎤 录音开始")
         } catch {
             print("[AppState] ❌ 录音开始失败: \(error)")
+            // 回滚状态
+            isRecording = false
+            showHUD = false
         }
     }
     
     private func stopRecordingAndTranscribe() async {
-        let recordingStatus = await audioRecorder.isRecording
-        guard recordingStatus else {
-            print("[AppState] ⚠️ 未在录音中，跳过")
+        // 1. 优先检查本地状态
+        guard isRecording else {
+            print("[AppState] ⚠️ 未在录音中 (Local)，跳过")
             return
         }
         
+        // 2. 立即更新状态，防止重入
         print("[AppState] 🛑 停止录音...")
-        let audioSamples = await audioRecorder.stopRecording()
         isRecording = false
+        
+        // 3. 获取音频 (即便此时 AudioRecorder 还没完全停下，我们也只取这一次)
+        let audioSamples = await audioRecorder.stopRecording()
         
         guard !audioSamples.isEmpty else {
             print("[AppState] ⚠️ 音频样本为空")
+            // 延迟隐藏 HUD
+            try? await Task.sleep(for: .milliseconds(300))
+            showHUD = false
             return
         }
         

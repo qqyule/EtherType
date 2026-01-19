@@ -1,0 +1,38 @@
+#!/bin/bash
+set -e
+
+SOURCE="Assets/icon_original.png"
+ICONSET="Assets/EtherType.iconset"
+DEST="Assets/AppIcon.icns"
+
+if [ ! -f "$SOURCE" ]; then
+    echo "❌ Source image not found: $SOURCE"
+    exit 1
+fi
+
+echo "📂 Creating iconset directory..."
+rm -rf "$ICONSET"
+mkdir -p "$ICONSET"
+
+echo "🎨 Resizing images..."
+# Normal
+sips -s format png -z 16 16     "$SOURCE" --out "$ICONSET/icon_16x16.png"
+sips -s format png -z 32 32     "$SOURCE" --out "$ICONSET/icon_32x32.png"
+sips -s format png -z 128 128   "$SOURCE" --out "$ICONSET/icon_128x128.png"
+sips -s format png -z 256 256   "$SOURCE" --out "$ICONSET/icon_256x256.png"
+sips -s format png -z 512 512   "$SOURCE" --out "$ICONSET/icon_512x512.png"
+
+# Retina (@2x)
+sips -s format png -z 32 32     "$SOURCE" --out "$ICONSET/icon_16x16@2x.png"
+sips -s format png -z 64 64     "$SOURCE" --out "$ICONSET/icon_32x32@2x.png"
+sips -s format png -z 256 256   "$SOURCE" --out "$ICONSET/icon_128x128@2x.png"
+sips -s format png -z 512 512   "$SOURCE" --out "$ICONSET/icon_256x256@2x.png"
+sips -s format png -z 1024 1024 "$SOURCE" --out "$ICONSET/icon_512x512@2x.png"
+
+echo "📦 Converting to icns..."
+iconutil -c icns "$ICONSET" -o "$DEST"
+
+echo "🧹 Cleaning up..."
+rm -rf "$ICONSET"
+
+echo "✅ AppIcon.icns generated successfully at $DEST"

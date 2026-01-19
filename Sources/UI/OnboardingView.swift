@@ -1,4 +1,5 @@
 import SwiftUI
+import AppKit
 
 /// 应用欢迎及模型加载引导页面
 struct OnboardingView: View {
@@ -44,7 +45,30 @@ struct OnboardingView: View {
             
             // 底部操作区
             VStack(spacing: 16) {
-                if !showProgress {
+                if !isTrusted {
+                    // 权限请求状态
+                    Button(action: {
+                        requestPermission()
+                    }) {
+                        Text("授予辅助功能权限")
+                            .font(.headline)
+                            .foregroundStyle(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(LinearGradient(colors: [.orange, .red], startPoint: .top, endPoint: .bottom))
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                            .shadow(radius: 5)
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.horizontal, 40)
+                    
+                    Text("EtherType 需要此权限以监听键盘快捷键\n点击跳转至 系统设置 > 隐私与安全性 > 辅助功能")
+                        .font(.caption2)
+                        .foregroundStyle(.tertiary)
+                        .multilineTextAlignment(.center)
+                        
+                } else if !showProgress {
+                    // 开始使用状态
                     Button(action: {
                         withAnimation {
                             showProgress = true
@@ -62,19 +86,60 @@ struct OnboardingView: View {
                     }
                     .buttonStyle(.plain)
                     .padding(.horizontal, 40)
+                    
+                    Text("后台将下载基础语音模型 (约 150MB)")
+                        .font(.caption2)
+                        .foregroundStyle(.tertiary)
                 } else {
                     // 进度展示
                     loadingSection
+                    
+                    Text("正在加载语音模型，请保持网络连接")
+                        .font(.caption2)
+                        .foregroundStyle(.tertiary)
                 }
-                
-                Text(showProgress ? "正在加载语音模型 (约 150MB)，请保持网络连接" : "点击按钮后台将下载约 150MB 的基础模型")
-                    .font(.caption2)
-                    .foregroundStyle(.tertiary)
             }
             .padding(.bottom, 40)
+            .onAppear {
+                checkPermission()
+            }
+            .onReceive(timer) { _ in
+                checkPermission()
+            }
         }
         .frame(width: 400, height: 600)
         .background(Color(NSColor.windowBackgroundColor))
+    }
+    
+    // 1秒轮询一次权限状态
+    private let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
+
+    
+    // MARK: - Helper Methods
+    
+    @State private var isTrusted: Bool = AXIsProcessTrusted()
+    
+    private func checkPermission() {
+        let trusted = AXIsProcessTrusted()
+        if trusted != isTrusted {
+            withAnimation {
+                isTrusted = trusted
+            }
+        }
+    }
+    
+    private func requestPermission() {
+        // 使用字符串字面量避免 Unmanaged<CFString> 转换问题及并发警告
+        let options = ["AXTrustedCheckOptionPrompt": true] as CFDictionary
+        let trusted = AXIsProcessTrustedWithOptions(options)
+        
+        if trusted {
+            isTrusted = true
+        } else {
+            // 打开系统设置
+            let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!
+            NSWorkspace.shared.open(url)
+        }
     }
     
     /// 加载进度区域

@@ -12,6 +12,9 @@
     
     <key>CFBundleName</key>
     <string>EtherType</string>
+
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
     
     <key>CFBundleDisplayName</key>
     <string>EtherType</string>

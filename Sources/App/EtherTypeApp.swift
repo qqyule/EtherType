@@ -59,35 +59,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let trusted = AXIsProcessTrustedWithOptions(getAXOptions())
         
         print("[EtherType] 🔐 辅助功能权限: \(trusted ? "✅ 已授权" : "❌ 未授权")")
-        if !trusted {
-            print("[EtherType] ⚠️ 全局快捷键需要辅助功能权限！")
-            // 弹窗提示用户
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                let alert = NSAlert()
-                alert.messageText = "需要辅助功能权限"
-                alert.informativeText = "EtherType 需要监听全局快捷键才能正常工作。\n\n请在“系统设置 > 隐私与安全性 > 辅助功能”中授予 EtherType 权限，然后重启应用。"
-                alert.alertStyle = .warning
-                alert.addButton(withTitle: "打开系统设置")
-                alert.addButton(withTitle: "稍后")
+        // 移除启动时的强制弹窗，改为在引导页中引导用户授权
                 
-                if alert.runModal() == .alertFirstButtonReturn {
-                     let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!
-                     NSWorkspace.shared.open(url)
-                }
-            }
-        }
-        
         print("[EtherType] 引导完成状态: \(Defaults[.onboardingCompleted])")
         
-        // 检查是否需要显示引导
-        if !Defaults[.onboardingCompleted] {
-            print("[EtherType] 📋 需要显示引导页")
+        // 检查是否需要显示引导 (未完成引导 OR 权限丢失)
+        if !Defaults[.onboardingCompleted] || !trusted {
+            print("[EtherType] 📋 需要显示引导页 (引导未完成 或 权限缺失)")
             // 延迟弹出窗口
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.showOnboardingWindow()
             }
         } else {
-            print("[EtherType] ✅ 引导已完成，跳过")
+            print("[EtherType] ✅ 引导已完成且权限正常，跳过")
         }
         
         // 设置 HUD 窗口
