@@ -1,0 +1,40 @@
+{
+  "": {
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/master.swiftdeps"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/Sources/App/AppState.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/AppState.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/AppState.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/AppState~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/AppState.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/AppState.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/Sources/App/EtherTypeApp.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/EtherTypeApp.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/EtherTypeApp.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/EtherTypeApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/EtherTypeApp.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/EtherTypeApp.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/Sources/App/KeyboardShortcutNames.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/KeyboardShortcutNames.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/KeyboardShortcutNames.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/KeyboardShortcutNames~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/KeyboardShortcutNames.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/KeyboardShortcutNames.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/Sources/UI/MenuBarView.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/MenuBarView.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/MenuBarView.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/MenuBarView~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/MenuBarView.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/MenuBarView.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/Sources/UI/SettingsView.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/SettingsView.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/SettingsView.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/SettingsView~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/SettingsView.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherType.build/SettingsView.dia"
+  }
+}

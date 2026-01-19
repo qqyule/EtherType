@@ -1,0 +1,3 @@
+module EtherTypePackageTests {
+    header "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypePackageTests.build/include/EtherTypePackageTests-Swift.h"
+}

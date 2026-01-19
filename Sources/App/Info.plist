@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- 隐藏 Dock 图标，仅显示菜单栏 -->
+    <key>LSUIElement</key>
+    <true/>
+    
+    <!-- 应用标识 -->
+    <key>CFBundleIdentifier</key>
+    <string>com.ethertype.app</string>
+    
+    <key>CFBundleName</key>
+    <string>EtherType</string>
+    
+    <key>CFBundleDisplayName</key>
+    <string>EtherType</string>
+    
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    
+    <key>CFBundleShortVersionString</key>
+    <string>0.1.0</string>
+    
+    <!-- 麦克风权限说明 -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>EtherType 需要访问麦克风以进行语音识别</string>
+    
+    <!-- 辅助功能权限说明（用于文本注入） -->
+    <key>NSAppleEventsUsageDescription</key>
+    <string>EtherType 需要发送事件以将识别的文字输入到其他应用</string>
+</dict>
+</plist>

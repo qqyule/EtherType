@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypePackageTests.build/master.swiftdeps"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypePackageTests.derived/runner.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypePackageTests.build/runner.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypePackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypePackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypePackageTests.build/runner.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypePackageTests.build/runner.dia"
+  }
+}

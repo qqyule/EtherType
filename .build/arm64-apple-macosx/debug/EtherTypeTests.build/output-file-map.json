@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypeTests.build/master.swiftdeps"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/Tests/EtherTypeTests.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypeTests.build/EtherTypeTests.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypeTests.build/EtherTypeTests.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypeTests.build/EtherTypeTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypeTests.build/EtherTypeTests.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/EtherTypeTests.build/EtherTypeTests.dia"
+  }
+}

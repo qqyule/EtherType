@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ArgumentParserToolInfo.build/master.swiftdeps"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/swift-argument-parser/Sources/ArgumentParserToolInfo/ToolInfo.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ArgumentParserToolInfo.build/ToolInfo.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ArgumentParserToolInfo.build/ToolInfo.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ArgumentParserToolInfo.build/ToolInfo~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ArgumentParserToolInfo.build/ToolInfo.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/ArgumentParserToolInfo.build/ToolInfo.dia"
+  }
+}

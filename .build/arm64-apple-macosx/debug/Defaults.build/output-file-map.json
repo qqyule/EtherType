@@ -1,0 +1,89 @@
+{
+  "": {
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/master.swiftdeps"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/Defaults/Sources/Defaults/Defaults+AnySerializable.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+AnySerializable.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+AnySerializable.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+AnySerializable~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+AnySerializable.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+AnySerializable.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/Defaults/Sources/Defaults/Defaults+Bridge.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Bridge.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Bridge.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Bridge~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Bridge.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Bridge.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/Defaults/Sources/Defaults/Defaults+Extensions.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Extensions.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Extensions.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Extensions~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Extensions.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Extensions.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/Defaults/Sources/Defaults/Defaults+Protocol.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Protocol.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Protocol.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Protocol~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Protocol.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults+Protocol.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/Defaults/Sources/Defaults/Defaults.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Defaults.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/Defaults/Sources/Defaults/Observation+Combine.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Observation+Combine.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Observation+Combine.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Observation+Combine~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Observation+Combine.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Observation+Combine.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/Defaults/Sources/Defaults/Observation.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Observation.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Observation.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Observation~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Observation.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Observation.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/Defaults/Sources/Defaults/Reset.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Reset.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Reset.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Reset~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Reset.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Reset.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/Defaults/Sources/Defaults/SwiftUI.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/SwiftUI.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/SwiftUI.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/SwiftUI~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/SwiftUI.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/SwiftUI.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/Defaults/Sources/Defaults/UserDefaults.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/UserDefaults.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/UserDefaults.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/UserDefaults~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/UserDefaults.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/UserDefaults.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/.build/checkouts/Defaults/Sources/Defaults/Utilities.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Utilities.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Utilities.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Utilities~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Utilities.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/Utilities.dia"
+  },
+  "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/DerivedSources/resource_bundle_accessor.swift": {
+    "dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/resource_bundle_accessor.d",
+    "object": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/resource_bundle_accessor.swiftdeps",
+    "diagnostics": "/Users/leo/Web/project/mac-app/EtherType/.build/arm64-apple-macosx/debug/Defaults.build/resource_bundle_accessor.dia"
+  }
+}
