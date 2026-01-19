@@ -36,6 +36,17 @@ final class AppState {
     /// 模型是否加载完成
     var isModelLoaded: Bool = false
     
+    /// 当前选中的模型
+    var selectedModel: WhisperModel {
+        get { Defaults[.selectedWhisperModel] }
+        set { Defaults[.selectedWhisperModel] = newValue }
+    }
+    
+    /// 当前已加载的模型名称
+    var currentModelName: String {
+        whisperManager.currentModel?.displayName ?? "未加载"
+    }
+    
     /// 最近的转录结果
     var lastTranscription: String = ""
     
@@ -80,6 +91,27 @@ final class AppState {
             isModelLoaded = whisperManager.isModelLoaded
             isModelLoading = false
             print("[AppState] 模型加载完成: \(isModelLoaded)")
+        }
+    }
+    
+    /// 切换到指定模型
+    /// - Parameter model: 目标模型
+    func switchModel(to model: WhisperModel) {
+        guard !isModelLoading else {
+            print("[AppState] 正在加载中，无法切换")
+            return
+        }
+        
+        isModelLoading = true
+        isModelLoaded = false
+        modelLoadProgress = 0.0
+        print("[AppState] 开始切换模型到: \(model.displayName)")
+        
+        Task {
+            await whisperManager.switchModel(to: model)
+            isModelLoaded = whisperManager.isModelLoaded
+            isModelLoading = false
+            print("[AppState] 模型切换完成: \(isModelLoaded)")
         }
     }
     

@@ -1,12 +1,16 @@
 import Foundation
 import WhisperKit
 import Combine
+import Defaults
 
 /// WhisperKit 语音识别管理器
 /// 使用类 + Sendable 封装
 final class WhisperManager: @unchecked Sendable {
     /// WhisperKit 实例
     private var whisperKit: WhisperKit?
+    
+    /// 当前加载的模型
+    private(set) var currentModel: WhisperModel?
     
     /// 模型加载状态
     private(set) var isModelLoaded: Bool = false
@@ -24,18 +28,26 @@ final class WhisperManager: @unchecked Sendable {
     init() {}
     
     /// 下载并加载 Whisper 模型
-    func loadModel() async {
-        guard !isLoading && !isModelLoaded else {
-            print("[WhisperManager] ⏭️ 跳过加载：isLoading=\(isLoading), isModelLoaded=\(isModelLoaded)")
+    /// - Parameter model: 要加载的模型，默认使用用户设置中的模型
+    func loadModel(_ model: WhisperModel? = nil) async {
+        guard !isLoading else {
+            print("[WhisperManager] ⏭️ 跳过加载：正在加载中")
+            return
+        }
+        
+        let targetModel = model ?? Defaults[.selectedWhisperModel]
+        
+        // 如果模型已加载且相同，直接返回
+        if isModelLoaded && currentModel == targetModel {
+            print("[WhisperManager] ⏭️ 跳过加载：模型已加载 \(targetModel.displayName)")
             return
         }
         
         isLoading = true
         loadProgress = 0.0
         
-        // 使用 base 模型，更轻量快速（约 150MB）
-        let modelVariant = "openai_whisper-base"
-        print("[WhisperManager] 📦 开始加载模型: \(modelVariant)")
+        let modelVariant = targetModel.rawValue
+        print("[WhisperManager] 📦 开始加载模型: \(targetModel.displayName) (\(modelVariant))")
         
         do {
             print("[WhisperManager] 📥 开始下载模型...")
@@ -68,13 +80,14 @@ final class WhisperManager: @unchecked Sendable {
             
             let kit = try await WhisperKit(config)
             whisperKit = kit
+            currentModel = targetModel
             
             isModelLoaded = true
             loadProgress = 1.0
             onProgressUpdate?(1.0)
             isLoading = false
             
-            print("[WhisperManager] ✅ 模型加载完成，准备就绪！")
+            print("[WhisperManager] ✅ 模型 \(targetModel.displayName) 加载完成，准备就绪！")
             
         } catch {
             isLoading = false
@@ -82,6 +95,26 @@ final class WhisperManager: @unchecked Sendable {
             print("[WhisperManager] ❌ 错误详情: \(error.localizedDescription)")
             onProgressUpdate?(0.0)
         }
+    }
+    
+    /// 切换到指定模型
+    /// - Parameter model: 目标模型
+    func switchModel(to model: WhisperModel) async {
+        print("[WhisperManager] 🔄 切换模型: \(currentModel?.displayName ?? "无") -> \(model.displayName)")
+        
+        // 卸载当前模型
+        if isModelLoaded {
+            whisperKit = nil
+            isModelLoaded = false
+            currentModel = nil
+            print("[WhisperManager] 🗑️ 已卸载旧模型")
+        }
+        
+        // 保存选择
+        Defaults[.selectedWhisperModel] = model
+        
+        // 加载新模型
+        await loadModel(model)
     }
     
     /// 转录音频样本
