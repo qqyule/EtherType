@@ -1,0 +1,18 @@
+# VitePress 项目忽略文件
+
+# 依赖
+node_modules/
+
+# VitePress 构建输出
+.vitepress/dist/
+.vitepress/cache/
+
+# 系统文件
+.DS_Store
+*.log
+
+# 编辑器
+.idea/
+.vscode/
+*.swp
+*.swo
