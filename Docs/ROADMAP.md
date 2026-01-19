@@ -67,7 +67,7 @@
 
 ```bash
 # Fork & Clone
-git clone https://github.com/yourusername/EtherType.git
+git clone https://github.com/qqyule/EtherType.git
 
 # 创建功能分支
 git checkout -b feature/your-feature

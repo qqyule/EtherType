@@ -69,7 +69,7 @@ export default defineConfig({
 
     // 社交链接
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yourusername/EtherType' }
+      { icon: 'github', link: 'https://github.com/qqyule/EtherType' }
     ],
 
     // 页脚
@@ -85,7 +85,7 @@ export default defineConfig({
 
     // 编辑链接
     editLink: {
-      pattern: 'https://github.com/yourusername/EtherType/edit/main/Docs/:path',
+      pattern: 'https://github.com/qqyule/EtherType/edit/main/Docs/:path',
       text: '在 GitHub 上编辑此页面'
     },
 

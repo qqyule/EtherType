@@ -203,7 +203,7 @@ struct AboutSettingsTab: View {
             Spacer()
             
             // GitHub 链接
-            Link(destination: URL(string: "https://github.com/yourusername/EtherType")!) {
+            Link(destination: URL(string: "https://github.com/qqyule/EtherType")!) {
                 Label("GitHub 开源", systemImage: "link")
             }
             .buttonStyle(.link)
