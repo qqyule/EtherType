@@ -103,17 +103,21 @@ final class WhisperManager: @unchecked Sendable {
                 lastError = nil
                 return
             } catch let error as ModelError {
-                handleError(error)
-                isLoading = false
-                return
-            } catch {
-                lastDownloadError = error
-                
+                // 只对下载失败进行重试
+                guard case .downloadFailed(let underlyingError) = error else {
+                    // 对于其他 ModelError（如 loadFailed），直接失败
+                    handleError(error)
+                    isLoading = false
+                    return
+                }
+            
+                lastDownloadError = underlyingError
+            
                 if attempt < maxRetryCount {
                     // 计算指数退避延迟
-                    let delaySeconds = pow(2.0, Double(attempt - 1)) // 1s, 2s, 4s
-                    print("[WhisperManager] ⚠️ 第 \(attempt) 次尝试失败，\(Int(delaySeconds)) 秒后重试...")
-                    
+                    let delaySeconds = pow(2.0, Double(attempt)) // 2s, 4s
+                    print("[WhisperManager] ⚠️ 下载失败（第 \(attempt) 次），\(Int(delaySeconds)) 秒后重试...")
+                
                     // 重新检查网络状态
                     if !NetworkMonitor.shared.isConnected {
                         let networkError = ModelError.networkUnavailable
@@ -121,7 +125,15 @@ final class WhisperManager: @unchecked Sendable {
                         isLoading = false
                         return
                     }
-                    
+                
+                    try? await Task.sleep(for: .seconds(delaySeconds))
+                }
+            } catch {
+                // 捕获 loadModelInternal 中未预期的其他错误
+                lastDownloadError = error
+                if attempt < maxRetryCount {
+                    let delaySeconds = pow(2.0, Double(attempt))
+                    print("[WhisperManager] ⚠️ 发生未知错误（第 \(attempt) 次），\(Int(delaySeconds)) 秒后重试...")
                     try? await Task.sleep(for: .seconds(delaySeconds))
                 }
             }
