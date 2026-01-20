@@ -67,9 +67,11 @@ swift build -c release
 - [x] 基础语音转文字
 - [x] 全局快捷键
 - [x] 多模型支持
-- [ ] 开机自启
+- [x] 开机自启
 - [ ] Ollama 后处理集成
 - [ ] 自定义提示词
+
+👉 查看完整路线图：[Docs/ROADMAP.md](Docs/ROADMAP.md)
 
 ## 📄 License
 
