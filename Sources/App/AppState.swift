@@ -50,6 +50,9 @@ final class AppState {
     /// 最近的转录结果
     var lastTranscription: String = ""
     
+    /// 模型加载错误信息（用于 UI 展示）
+    var modelLoadError: String?
+    
     /// 音频录制器
     private let audioRecorder = AudioRecorder()
     
@@ -59,12 +62,25 @@ final class AppState {
     /// 初始化
     init() {
         print("[AppState] 初始化中...")
+        
+        // 启动网络监控
+        NetworkMonitor.shared.start()
+        
         setupKeyboardShortcuts()
         
         // 设置进度回调
         whisperManager.onProgressUpdate = { [weak self] progress in
             Task { @MainActor in
                 self?.modelLoadProgress = progress
+            }
+        }
+        
+        // 设置错误回调
+        whisperManager.onError = { [weak self] error in
+            Task { @MainActor in
+                self?.modelLoadError = error.localizedDescription
+                self?.isModelLoading = false
+                print("[AppState] 模型错误: \(error.localizedDescription)")
             }
         }
         
@@ -84,6 +100,7 @@ final class AppState {
             return
         }
         isModelLoading = true
+        modelLoadError = nil  // 清除之前的错误
         print("[AppState] 开始加载模型...")
         
         Task {
@@ -105,6 +122,7 @@ final class AppState {
         isModelLoading = true
         isModelLoaded = false
         modelLoadProgress = 0.0
+        modelLoadError = nil  // 清除之前的错误
         print("[AppState] 开始切换模型到: \(model.displayName)")
         
         Task {

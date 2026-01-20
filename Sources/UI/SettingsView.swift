@@ -1,6 +1,7 @@
 import SwiftUI
 import KeyboardShortcuts
 import Defaults
+import LaunchAtLogin
 
 /// 设置页面视图
 /// 提供快捷键自定义、模型选择、通用设置等功能
@@ -43,17 +44,27 @@ struct SettingsView: View {
 
 /// 通用设置标签页
 struct GeneralSettingsTab: View {
+    /// 开机自启状态（与系统同步）
+    @State private var launchAtLogin: Bool = LaunchAtLogin.isEnabled
+    
     var body: some View {
         Form {
-            // 开机自启（占位，后续实现）
-            Toggle("开机时自动启动", isOn: .constant(false))
-                .disabled(true)
+            // 开机自启开关
+            Toggle("开机时自动启动", isOn: $launchAtLogin)
+                .onChange(of: launchAtLogin) { _, newValue in
+                    LaunchAtLogin.isEnabled = newValue
+                    print("[Settings] 开机自启设置: \(newValue)")
+                }
             
-            Text("更多设置将在后续版本中添加")
+            Text("启用后，系统重启时将自动运行 EtherType")
                 .foregroundStyle(.secondary)
                 .font(.caption)
         }
         .padding()
+        .onAppear {
+            // 同步系统状态
+            launchAtLogin = LaunchAtLogin.isEnabled
+        }
     }
 }
 
@@ -128,6 +139,17 @@ struct ModelSettingsTab: View {
                             }
                         } else {
                             Text(appState.currentModelName)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    
+                    // 错误提示
+                    if let error = appState.modelLoadError {
+                        HStack(spacing: 8) {
+                            Image(systemName: "exclamationmark.triangle.fill")
+                                .foregroundStyle(.orange)
+                            Text(error)
+                                .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
                     }
