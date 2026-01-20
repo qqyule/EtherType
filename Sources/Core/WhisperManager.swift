@@ -1,7 +1,6 @@
-import Foundation
-import WhisperKit
 import Combine
 import Defaults
+import OSLog
 
 // MARK: - 模型加载错误类型
 
@@ -36,6 +35,9 @@ enum ModelError: Error, LocalizedError {
 /// WhisperKit 语音识别管理器
 /// 使用类 + Sendable 封装
 final class WhisperManager: @unchecked Sendable {
+    /// 日志记录器
+    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier ?? "com.ethertype.app", category: "WhisperManager")
+    
     /// 最大重试次数
     private let maxRetryCount = 3
     
@@ -70,7 +72,7 @@ final class WhisperManager: @unchecked Sendable {
     /// - Parameter model: 要加载的模型，默认使用用户设置中的模型
     func loadModel(_ model: WhisperModel? = nil) async {
         guard !isLoading else {
-            print("[WhisperManager] ⏭️ 跳过加载：正在加载中")
+            logger.info("⏭️ 跳过加载：正在加载中")
             return
         }
         
@@ -78,7 +80,7 @@ final class WhisperManager: @unchecked Sendable {
         
         // 如果模型已加载且相同，直接返回
         if isModelLoaded && currentModel == targetModel {
-            print("[WhisperManager] ⏭️ 跳过加载：模型已加载 \(targetModel.displayName)")
+            logger.info("⏭️ 跳过加载：模型已加载 \(targetModel.displayName)")
             return
         }
         
@@ -116,7 +118,7 @@ final class WhisperManager: @unchecked Sendable {
                 if attempt < maxRetryCount {
                     // 计算指数退避延迟
                     let delaySeconds = pow(2.0, Double(attempt)) // 2s, 4s
-                    print("[WhisperManager] ⚠️ 下载失败（第 \(attempt) 次），\(Int(delaySeconds)) 秒后重试...")
+                    logger.warning("⚠️ 下载失败（第 \(attempt) 次），\(Int(delaySeconds)) 秒后重试...")
                 
                     // 重新检查网络状态
                     if !NetworkMonitor.shared.isConnected {
@@ -133,7 +135,7 @@ final class WhisperManager: @unchecked Sendable {
                 lastDownloadError = error
                 if attempt < maxRetryCount {
                     let delaySeconds = pow(2.0, Double(attempt))
-                    print("[WhisperManager] ⚠️ 发生未知错误（第 \(attempt) 次），\(Int(delaySeconds)) 秒后重试...")
+                    logger.warning("⚠️ 发生未知错误（第 \(attempt) 次），\(Int(delaySeconds)) 秒后重试...")
                     try? await Task.sleep(for: .seconds(delaySeconds))
                 }
             }
@@ -150,8 +152,8 @@ final class WhisperManager: @unchecked Sendable {
     /// 内部加载模型逻辑（无重试）
     private func loadModelInternal(_ targetModel: WhisperModel) async throws {
         let modelVariant = targetModel.rawValue
-        print("[WhisperManager] 📦 开始加载模型: \(targetModel.displayName) (\(modelVariant))")
-        print("[WhisperManager] 📥 开始下载模型...")
+        logger.info("📦 开始加载模型: \(targetModel.displayName) (\(modelVariant))")
+        logger.info("📥 开始下载模型...")
         
         // 步骤 1: 下载模型
         let modelFolder: URL
@@ -164,15 +166,15 @@ final class WhisperManager: @unchecked Sendable {
                 if percent % 5 == 0 && self.loadProgress != progress.fractionCompleted {
                     self.loadProgress = progress.fractionCompleted
                     self.onProgressUpdate?(self.loadProgress)
-                    print("[WhisperManager] 📥 下载进度: \(percent)%")
+                    self.logger.info("📥 下载进度: \(percent)%")
                 }
             }
         } catch {
             throw ModelError.downloadFailed(underlying: error)
         }
         
-        print("[WhisperManager] ✅ 下载完成，模型路径: \(modelFolder.path)")
-        print("[WhisperManager] 🔧 正在加载模型到内存...")
+        logger.info("✅ 下载完成")
+        logger.info("🔧 正在加载模型到内存...")
         
         // 步骤 2: 加载模型
         let config = WhisperKitConfig(
@@ -199,13 +201,13 @@ final class WhisperManager: @unchecked Sendable {
         onProgressUpdate?(1.0)
         isLoading = false
         
-        print("[WhisperManager] ✅ 模型 \(targetModel.displayName) 加载完成，准备就绪！")
+        logger.info("✅ 模型 \(targetModel.displayName) 加载完成，准备就绪！")
     }
     
     /// 处理错误
     private func handleError(_ error: ModelError) {
         lastError = error
-        print("[WhisperManager] ❌ \(error.localizedDescription)")
+        logger.error("❌ 模型操作失败: \(error.errorDescription ?? "未知错误")")
         onProgressUpdate?(0.0)
         onError?(error)
     }
@@ -220,7 +222,7 @@ final class WhisperManager: @unchecked Sendable {
             whisperKit = nil
             isModelLoaded = false
             currentModel = nil
-            print("[WhisperManager] 🗑️ 已卸载旧模型")
+            logger.info("🗑️ 已卸载旧模型")
         }
         
         // 保存选择
@@ -233,11 +235,11 @@ final class WhisperManager: @unchecked Sendable {
     /// 转录音频样本
     func transcribe(audioSamples: [Float]) async -> String {
         guard isModelLoaded, let kit = whisperKit else {
-            print("[WhisperManager] ⚠️ 无法转录：模型未加载")
+            logger.warning("⚠️ 无法转录：模型未加载")
             return ""
         }
         
-        print("[WhisperManager] 🎤 开始转录 \(audioSamples.count) 个样本")
+        logger.info("🎤 开始转录音频数据")
         
         do {
             var promptTokens: [Int]? = nil
@@ -260,10 +262,10 @@ final class WhisperManager: @unchecked Sendable {
                 .joined(separator: "")
                 .trimmingCharacters(in: .whitespacesAndNewlines)
             
-            print("[WhisperManager] ✅ 转录完成: \(transcribedText)")
+            logger.info("✅ 转录完成")
             return transcribedText
         } catch {
-            print("[WhisperManager] ❌ 转录失败: \(error.localizedDescription)")
+            logger.error("❌ 转录失败")
             return ""
         }
     }
