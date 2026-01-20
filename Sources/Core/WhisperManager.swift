@@ -1,6 +1,7 @@
 import Combine
 import Defaults
 import OSLog
+import WhisperKit
 
 // MARK: - 模型加载错误类型
 
