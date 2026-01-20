@@ -21,12 +21,12 @@ enum ModelError: Error, LocalizedError {
         switch self {
         case .networkUnavailable:
             return "网络连接不可用，请检查网络设置"
-        case .downloadFailed(let error):
-            return "模型下载失败: \(error.localizedDescription)"
-        case .loadFailed(let error):
-            return "模型加载失败: \(error.localizedDescription)"
+        case .downloadFailed:
+            return "模型下载失败，请检查网络连接后重试"
+        case .loadFailed:
+            return "模型加载失败，请尝试重新启动应用或重新选择模型"
         case .maxRetriesExceeded:
-            return "已尝试多次，仍无法完成下载，请稍后重试"
+            return "已尝试多次，仍无法完成下载，请检查网络并稍后重试"
         }
     }
 }
